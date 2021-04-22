@@ -22,7 +22,7 @@ default_args = {
 
 @dag(
     default_args=default_args,
-    schedule_interval=timedelta(minutes=int(os.environ.get('INTERVAL'))),
+    schedule_interval=timedelta(days=int(os.environ.get('INTERVAL'))),
     start_date=days_ago(1,
                         int(os.environ.get('START_HOUR')),
                         int(os.environ.get('START_MINUTE'))),
